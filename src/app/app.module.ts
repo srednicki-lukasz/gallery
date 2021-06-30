@@ -10,8 +10,7 @@ import { HeaderComponent } from './layout/header/header.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { CoreModule } from './core/core.module';
 
@@ -23,7 +22,6 @@ import { CoreModule } from './core/core.module';
 		BrowserAnimationsModule,
 		MatToolbarModule,
 		MatPaginatorModule,
-        MatProgressSpinnerModule,
         MatProgressBarModule,
         CoreModule
 	],
