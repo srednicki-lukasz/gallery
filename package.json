@@ -23,6 +23,7 @@
 		"@angular/router": "~9.1.11",
 		"@fortawesome/fontawesome-free": "^5.15.3",
 		"bootstrap": "^5.0.2",
+		"prettier": "^2.3.2",
 		"rxjs": "~6.5.4",
 		"tslib": "^1.10.0",
 		"zone.js": "~0.10.2"

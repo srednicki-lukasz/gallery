@@ -6,21 +6,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+	/**
+	 * Emit keyup event.
+	 * @type {EventEmitter<any>}
+	 * @memberof HeaderComponent
+	 */
+	@Output() inputEvent: EventEmitter<any> = new EventEmitter<any>();
 
-    /**
-     * Emit keyup event.
-     * @type {EventEmitter<any>}
-     * @memberof HeaderComponent
-     */
-    @Output() inputEvent: EventEmitter<any> = new EventEmitter<any>();
+	/**
+	 * Current query.
+	 * @type {string}
+	 * @memberof HeaderComponent
+	 */
+	@Input() currentQuery: string;
 
-    /**
-     * Current query.
-     * @type {string}
-     * @memberof HeaderComponent
-     */
-    @Input() currentQuery: string;
-    
 	constructor() {}
 
 	ngOnInit(): void {}

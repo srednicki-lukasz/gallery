@@ -1,17 +1,17 @@
 <mat-toolbar class="border-bottom">
-    <span class="text-muted">PHOTO</span>
-    <span class="text-dark"><b>GALLERY</b></span>
-    <span class="spacer"></span>
-    <span class="text-dark">{{ currentQuery.toUpperCase() }}</span>
+	<span class="text-muted">PHOTO</span>
+	<span class="text-dark"><b>GALLERY</b></span>
+	<span class="spacer"></span>
+	<span class="text-dark">{{ currentQuery.toUpperCase() }}</span>
 </mat-toolbar>
 
 <div class="text-center border-bottom pexels">
-    <small class="text-muted">POWERED BY PEXELS API</small>
+	<small class="text-muted">POWERED BY PEXELS API</small>
 </div>
 
 <mat-form-field class="text-center w-100" appearance="fill">
-    <mat-label>
-        <span class="material-icons-outlined">search</span>
-    </mat-label>
-    <input matInput type="text" (keyup)="inputEvent.emit($event)">
+	<mat-label>
+		<span class="material-icons-outlined">search</span>
+	</mat-label>
+	<input matInput type="text" (keyup)="inputEvent.emit($event)" />
 </mat-form-field>

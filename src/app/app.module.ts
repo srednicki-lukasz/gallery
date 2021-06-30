@@ -11,7 +11,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 
 import { CoreModule } from './core/core.module';
 
@@ -23,9 +23,9 @@ import { CoreModule } from './core/core.module';
 		BrowserAnimationsModule,
 		MatToolbarModule,
 		MatPaginatorModule,
-        MatProgressBarModule,
-        MatInputModule,
-        CoreModule
+		MatProgressBarModule,
+		MatInputModule,
+		CoreModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
