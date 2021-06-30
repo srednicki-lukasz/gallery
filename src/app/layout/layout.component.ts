@@ -107,10 +107,7 @@ export class LayoutComponent implements OnInit {
     search(event: any) {
         clearTimeout(this.timeout);
 
-        if (event.target.value === '') {
-            return
-        }
-        else {
+        if (event.target.value !== '') {
             this.timeout = setTimeout(() => {
                 this.isLoading = true;
                 this.query = event.target.value;
