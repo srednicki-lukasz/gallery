@@ -37,7 +37,7 @@ export class LayoutComponent implements OnInit {
      * @type {number}
      * @memberof LayoutComponent
      */
-	public pageSize: number = 20;
+	public pageSize: number = 30;
 
     /**
      * Total items count.
