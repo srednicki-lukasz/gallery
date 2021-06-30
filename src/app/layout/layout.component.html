@@ -1,0 +1,25 @@
+<div class="h-100 d-flex flex-column">
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading" class="position-absolute"></mat-progress-bar>
+
+	<header>
+		<app-header></app-header>
+	</header>
+
+	<main class="flex-fill" style="overflow: auto">
+		<div class="container-fluid pt-4 px-4">
+			<div class="row h-100">
+				<div class="col-lg-2 col-md-4 col-6 mb-4" *ngFor="let image of response?.photos">
+					<img class="img-fluid img-thumbnail pointer" [src]="image.src.tiny"/>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<mat-paginator
+		class="border-top"
+		[length]="length"
+		[pageSize]="pageSize"
+		[pageSizeOptions]="pageSizeOptions"
+		(page)="change($event)"
+	></mat-paginator>
+</div>
