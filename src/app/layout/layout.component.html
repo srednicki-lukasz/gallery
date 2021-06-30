@@ -2,7 +2,7 @@
     <mat-progress-bar mode="indeterminate" *ngIf="isLoading" class="position-absolute"></mat-progress-bar>
 
 	<header>
-		<app-header (inputEvent)="search($event)"></app-header>
+		<app-header [currentQuery]="this.query" (inputEvent)="search($event)"></app-header>
 	</header>
 
 	<main class="flex-fill" style="overflow: auto">

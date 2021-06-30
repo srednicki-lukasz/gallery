@@ -107,17 +107,21 @@ export class LayoutComponent implements OnInit {
     search(event: any) {
         clearTimeout(this.timeout);
 
-        this.timeout = setTimeout(() => {
-            this.isLoading = true;
+        if (event.target.value === '') {
+            return
+        }
+        else {
+            this.timeout = setTimeout(() => {
+                this.isLoading = true;
+                this.query = event.target.value;
 
-            this.query = event.target.value;
-
-            this.gallery
-                .loadImages({ pageIndex: this.pageIndex, pageSize: this.pageSize, query: this.query })
-                .subscribe(response => {
-                    this.response = response;
-                    this.isLoading = false;
-                })
-        }, 1000);
+                this.gallery
+                    .loadImages({ pageIndex: this.pageIndex, pageSize: this.pageSize, query: this.query })
+                    .subscribe(response => {
+                        this.response = response;
+                        this.isLoading = false;
+                    })
+            }, 1000);
+        }
     }
 }

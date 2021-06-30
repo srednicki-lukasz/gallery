@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
 	selector: 'app-header',
@@ -9,9 +9,17 @@ export class HeaderComponent implements OnInit {
 
     /**
      * Emit keyup event.
+     * @type {EventEmitter<any>}
      * @memberof HeaderComponent
      */
-    @Output() inputEvent = new EventEmitter();
+    @Output() inputEvent: EventEmitter<any> = new EventEmitter<any>();
+
+    /**
+     * Current query.
+     * @type {string}
+     * @memberof HeaderComponent
+     */
+    @Input() currentQuery: string;
     
 	constructor() {}
 
