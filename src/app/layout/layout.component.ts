@@ -66,7 +66,7 @@ export class LayoutComponent implements OnInit {
         this.isLoading = true;
 
         this.gallery
-            .loadImages({ pageIndex: 1, pageSize: 20, query: 'nature' })
+            .loadImages({ pageIndex: 1, pageSize: 30, query: 'nature' })
             .subscribe(response => {
                 this.response = response;
                 this.length = this.response.total_results;
