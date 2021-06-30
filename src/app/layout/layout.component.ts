@@ -60,6 +60,12 @@ export class LayoutComponent implements OnInit {
      */
 	public pageSizeOptions: number[] = [5, 10, 20, 30, 50];
 
+    /**
+     * Search timeout.
+     * @memberof LayoutComponent
+     */
+    public timeout = null;
+
 	constructor( private gallery: GalleryService ) {}
 
 	ngOnInit(): void {
@@ -77,19 +83,41 @@ export class LayoutComponent implements OnInit {
     /**
      * Change pagination configuration.
      * @param {PageEvent} event
+     * @memberof LayoutComponent
      */
 	change(event: PageEvent) {
         this.isLoading = true;
         
-        const pageIndex = event.pageIndex + 1;
-        const pageSize = event.pageSize;
-        const query = this.query;
+        this.pageIndex = event.pageIndex + 1;
+        this.pageSize = event.pageSize;
 
         this.gallery
-            .loadImages({ pageIndex, pageSize, query })
+            .loadImages({ pageIndex: this.pageIndex, pageSize: this.pageSize, query: this.query })
             .subscribe(response => {
                 this.response = response;
                 this.isLoading = false;
             })
 	}
+
+    /**
+     * Search images
+     * @param {any} event
+     * @memberof LayoutComponent
+     */
+    search(event: any) {
+        clearTimeout(this.timeout);
+
+        this.timeout = setTimeout(() => {
+            this.isLoading = true;
+
+            this.query = event.target.value;
+
+            this.gallery
+                .loadImages({ pageIndex: this.pageIndex, pageSize: this.pageSize, query: this.query })
+                .subscribe(response => {
+                    this.response = response;
+                    this.isLoading = false;
+                })
+        }, 1000);
+    }
 }
